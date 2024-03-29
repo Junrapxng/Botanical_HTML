@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>สวนพฤกษศาสตร์มหาวิทยาลัยแม่ฟ้าหลวง</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="/img/logoP.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+<script>
+    function redirectToPath(path) {
+        window.location.href = path;
+    }
+</script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('/img/bg02.jpg') center/cover no-repeat;
+        height: 100vh;
+        justify-content: center;
+
+    }
+
+    #butshow01 {
+        position: fixed;
+        bottom: 0;
+        padding-bottom: 10%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    .topnav {
+        background-color: #13564B;
+    }
+
+    .title {
+        font-family: 'Kanit', sans-serif;
+        color: whitesmoke;
+        margin-top: 1em;
+
+        margin-left: 1em;
+    }
+
+    .rows {
+
+        list-style-type: none;
+        padding: 0;
+    }
+
+
+    .rows01,
+    .rows02 {
+        padding-left: 0;
+        padding-top: 0.5em;
+        text-align: center;
+        font-family: 'Kanit', sans-serif;
+        color: #13564B;
+        font-size: 24px;
+        font-weight: 800;
+        list-style-type: none;
+        text-shadow:
+            2px 2px 22px #ffffff,
+            -2px 2px 12px #ffffff,
+            2px 2px 0 #ffffff,
+            2px -2px 22px #ffffff;
+    }
+
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+
+        color: white;
+    }
+
+    .fa-home {
+
+        color: white;
+    }
+
+    .fa-instagram {
+
+        color: white;
+    }
+
+    .fa-user {
+        color: white;
+    }
+
+    .fa-globe {
+        color: white;
+    }
+
+    .but1 {
+        text-align: center;
+        margin-right: 1em;
+        background-image: url(/img/but01.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 20%;
+        height: 10em;
+        border-radius: 3em;
+        border: 4px solid #13564B;
+        background-size: cover;
+    }
+
+    .but2 {
+        text-align: center;
+        margin-left: 1em;
+        background-image: url(/img/but02.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20%;
+        height: 10em;
+        border-radius: 3em;
+        border: 4px solid #13564B;
+        background-size: cover;
+    }
+
+    .rowsfoot {
+        font-family: 'Kanit', sans-serif;
+        font-size: 12px;
+        padding-top: 15px;
+        list-style-type: none;
+    }
+
+    .rows1 {
+        font-size: 20px;
+        padding: 1em;
+        list-style-type: none;
+    }
+
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #13564B;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    @media (max-width: 850px) {
+        #logo {
+            display: none;
+        }
+
+        .rows {
+            font-size: 8px;
+        }
+
+        #butshow01 {
+
+            padding-top: 8em;
+            flex-direction: column;
+        }
+
+        .but1,
+        .but2 {
+            height: 10em;
+            width: 70%;
+            margin: 2em 0;
+        }
+
+        .rows01,
+        .rows02 {
+            font-size: 20px;
+            text-shadow:
+                2px 2px 2px #ffffff,
+                -2px 2px 2px #ffffff,
+                -2px -2px 0 #ffffff,
+                2px -2px 0 #ffffff;
+        }
+
+        .rowsfoot {
+            font-size: 8px;
+        }
+
+        footer {
+            height: 14%;
+        }
+    }
+
+    @media (min-width: 1200px) {}
+
+    @media (min-width: 1900px) {
+        #butshow01 {
+            padding-top: 35em;
+
+        }
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark topnav fixed-top">
+        <div class="container-fluid">
+            <img id="logo" style="width: 5%;" src="/img/logoP.png" alt="">
+            <div class="title">
+                <ul class="rows">
+                    <li>สวนพฤกษศาสตร์มหาวิทยาลัยแม่ฟ้าหลวง เฉลิมพระเกียรติ 80 พรรษา มหาราชา</li>
+                    <li>Mae Fah Luang University Botanical Garden</li>
+
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+
+                </ul>
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item"><a href="/" class="nav-link fa fa-home"></a></li>
+                    <li class="nav-item"><a href="https://www.facebook.com/mfubotanicalgarden/"
+                            class="nav-link fa fa-facebook"></a></li>
+                    <li class="nav-item"><a
+                            href="https://www.instagram.com/mfubotanicalgarden/?igshid=YTQwZjQ0NmI0OA%3D%3D&fbclid=IwAR1anPVbT5gPd-lkbHqhSx_l6bVgT5AT8T6OQa0aHtZ9TshmEY5beBipDTM"
+                            class="nav-link fa fa-instagram"></a></li>
+                    <li class="nav-item"><a href="https://bg.mfu.ac.th/bg-index.html" class="nav-link fa fa-globe"></a>
+                    </li>
+                    <li class="nav-item"><a href="/login" class="nav-link fa fa-user"></a></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="butshow01">
+        <button class="but1" onclick="redirectToPath('/search');">
+            <ul class="rows01">
+                <li>ฐานข้อมูลพรรณไม้</li>
+                <li>Plant Database</li>
+            </ul>
+        </button>
+
+        <button class="but2" onclick="redirectToPath('/searchTwo');">
+            <ul class="rows02">
+                <li>ฐานข้อมูลตัวอย่างพรรณไม้</li>
+                <li>Herbarium Database</li>
+            </ul>
+        </button>
+    </div>
+    <footer style="font-family: 'Kanit', sans-serif;">
+        <div>
+            <ul class="rowsfoot" style="word-spacing: 2px; list-style: none;">
+                <li>ติดต่อเรา</li>
+                <li>สวนพฤกษศาสตร์มหาวิทยาลัยแม่ฟ้าหลวง เฉลิมพระเกียรติ 80 พรรษา มหาราชา 333 ม.1 ต.ท่าสุด อ.เมือง จังหวัด
+                    เชียงราย 57100</li>
+                <li>โทรศัพท์: 0 5391 6470 <span style="margin-left: 5px;">อีเมล: botanical@mfu.ac.th</span></li>
+            </ul>
+        </div>
+
+
+        <div>
+            <ul class="rowsfoot" style="word-spacing: 2px; list-style: none;">
+                <li>Contact</li>
+                <li>Mae Fah Laung University Botanical Garden 333 Moo 1 Thasud Subdistrict, Mueang District, Chiang Rai
+                    Province 57100 Thailand</li>
+                <li>Tel: 0 5391 6470 <span style="margin-left: 5px;">Email: botanical@mfu.ac.th</span></li>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

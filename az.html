@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filter Data</title>
+</head>
+<style>.co{
+color: white;}
+</style>
+<body>
+  <h1>Filter Data</h1>   <center>
+    
+  </center>
+  <!-- Create buttons for each letter of the alphabet -->
+  <button id="filterButtonA"><i>A</i> </button>
+  <button id="filterButtonB">B</button>
+  <!-- Add buttons for C to Z as needed -->
+  <button id="filterButtonC">C</button>
+  <button id="filterButtonD">D</button>
+  <button id="filterButtonE">E</button>
+  <button id="filterButtonF">F</button>
+  <button id="filterButtonG">G</button>
+  <button id="filterButtonH">H</button>
+  <button id="filterButtonI">I</button>
+  <button id="filterButtonJ">J</button>
+  <button id="filterButtonK">K</button>
+  <button id="filterButtonL">L</button>
+  <button id="filterButtonM">M</button>
+  <button id="filterButtonN">N</button>
+  <button id="filterButtonO">O</button>
+  <button id="filterButtonP">P</button>
+  <button id="filterButtonQ">Q</button>
+  <button id="filterButtonR">R</button>
+  <button id="filterButtonS">S</button>
+  <button id="filterButtonT">T</button>
+  <button id="filterButtonU">U</button>
+  <button id="filterButtonV">V</button>
+  <button id="filterButtonW">W</button>
+  <button id="filterButtonX">X</button>
+  <button id="filterButtonY">Y</button>
+  <button id="filterButtonZ">Z</button>
+  <div id="results"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    for (let letter = 'A'.charCodeAt(0); letter <= 'Z'.charCodeAt(0); letter++) {
+      const letterButton = document.getElementById(`filterButton${String.fromCharCode(letter)}`);
+      letterButton.addEventListener('click', () => {
+        filterData(String.fromCharCode(letter));
+      });
+    }
+
+    function filterData(filterLetter) {
+      axios
+        .get(`/filter?keyword=&filterLetter=${filterLetter}`)
+        .then((response) => {
+          const resultsDiv = document.getElementById('results');
+          resultsDiv.innerHTML = '';
+
+          if (response.data && response.data.length > 0) {
+            response.data.forEach((item) => {
+              const listItem = document.createElement('li');
+              listItem.textContent = `Scientific Name: ${item['Scientific name']}`;
+              resultsDiv.appendChild(listItem);
+            });
+          } else {
+            resultsDiv.textContent = 'No records found.';
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  </script>
+</body>
+</html>

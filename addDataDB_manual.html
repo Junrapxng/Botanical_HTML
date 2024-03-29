@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image Upload</title>
+</head>
+<body>
+    <label for="name">Scientific Name:</label>
+    <input type="text" id="Scientific_Name" name="Scientific_Name" required>
+    <br>
+
+    <label for="name">Familly:</label>
+    <input type="text" id="Familly" name="Familly" required>
+    <br>
+
+    <label for="name">Thai Name:</label>
+    <input type="text" id="Thai_Name" name="Thai_Name" required>
+    <br>
+
+    <label for="name">Local Name:</label>
+    <input type="text" id="Local_Name" name="Local_Name" required>
+    <br>
+
+    <label for="name">Description:</label>
+    <input type="text" id="Description" name="Description" required>
+    <br>
+
+    <label for="name">Habit:</label>
+    <input type="text" id="Habit" name="Habit" required>
+    <br>
+
+    <label for="name">Application:</label>
+    <input type="text" id="Application" name="Application" required>
+    <br>
+
+    <label for="name">ชาติพันธุ์:</label>
+    <input type="text" id="Ethnicity" name="Ethnicity" required>
+    <br>
+
+
+
+    <input type="file" id="imageInput" accept="image/*" multiple>
+    <br>
+
+    <button onclick="uploadImages(); submitForm();">SUBMIT</button>
+
+    <script>
+        //   function uploadImages() {
+        //     console.log("nut AA")
+        //   }
+          
+
+        function uploadImages() {
+          
+          
+            const inputElement = document.getElementById('imageInput');
+            const files = inputElement.files;
+
+
+            // console.log(files);
+
+            if (!files.length) {
+                alert('Please select one or more images to upload.');
+                return;
+            }
+
+            const formData = new FormData();
+
+            for (const file of files) {
+                formData.append('images', file);
+            }
+    
+            // const jsonString = JSON.stringify(myVariable , null, 2);
+            // console.log(jsonString);
+
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+        
+
+            .then(response => {
+                
+                if (response.ok) {
+                    console.log('Images uploaded successfully');
+                } else {
+                    console.error('Failed to upload images');
+                }
+            })
+            .catch(error => {
+                console.error('Error during image upload:', error);
+            });       
+
+    }
+
+
+    function submitForm() {
+            // Get form data
+            const Scientific_Name = document.getElementById('Scientific_Name').value;
+            const Familly = document.getElementById('Familly').value;
+            const Thai_Name = document.getElementById('Thai_Name').value;
+            const Local_Name = document.getElementById('Local_Name').value;
+            const Description = document.getElementById('Description').value;
+            const Habit = document.getElementById('Habit').value;
+            const Application = document.getElementById('Application').value;
+            const Ethnicity = document.getElementById('Ethnicity').value;
+
+            // Create a data object to send to the server
+            const data  = {
+                Scientific_Name: Scientific_Name,
+                Familly: Familly,
+                Thai_Name: Thai_Name,
+                Local_Name: Local_Name,
+                Description: Description,
+                Habit: Habit,
+                Application: Application,
+                Ethnicity: Ethnicity,
+            };
+
+            // Send data to the server using fetch
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // You can handle the server response here
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

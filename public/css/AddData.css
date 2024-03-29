@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+.btnAddData {
+    background-color: rgb(97, 97, 97);
+    border-radius: 40px;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 200px;
+    padding: 20px;
+}
+
+/* CSS */
+.button-64 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #b4b4b433, #eaeaea33 50%, #eaeaea33);
+    border: 0;
+    border-radius: 40px;
+    box-shadow: #eaeaea33 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+    outline: 0;
+}
+
+.button-64 span {
+    background-color: rgb(207, 207, 207);
+    padding: 16px 24px;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-64:hover span {
+    background: none;
+}
+
+
+.button-65 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #ffdc40, #f38f42 50%, #c74b03);
+    border: 0;
+    border-radius: 40px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-65:active,
+.button-65:hover {
+    outline: 0;
+}
+
+.button-65 span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-65:hover span {
+    background: none;
+}
+
+@media (min-width: 768px) {
+    .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+
+    .button-65 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
+
+.box {
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+  
+    margin: auto;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+    border-radius: 20px;
+    color: #000;
+    padding: 80px;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

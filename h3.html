@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display</title>
+    <link rel="shortcut icon" href="/img/logoP.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Data Display</h1>
+
+    <div id="dataContainer"></div>
+
+    <script>
+        // Get the data from the server as a JSON string
+        const dataString = '<%= data %>';
+        const data = JSON.parse(dataString);
+
+        // Create a container to display the data
+        const dataContainer = document.getElementById('dataContainer');
+
+        // Check if data is available
+        if (data && data.length > 0) {
+            // Iterate through the data and create HTML elements for each record
+            data.forEach(record => {
+                // Create a div for each record
+                const recordDiv = document.createElement('div');
+
+                // Add Scientific name to the div
+                const scientificName = document.createElement('p');
+                scientificName.textContent = `Scientific name: ${record['Scientific name1']}`;
+                recordDiv.appendChild(scientificName);
+
+                // Add Image to the div
+                if (record['Image']) {
+                    const image = document.createElement('img');
+                    image.src = `data:image/jpeg;base64,${record['Image']}`;
+                    image.alt = 'Image';
+                    recordDiv.appendChild(image);
+                }
+
+                // Add the record div to the main container
+                dataContainer.appendChild(recordDiv);
+            });
+        } else {
+            // Display a message if no data is available
+            dataContainer.textContent = 'No records found.';
+        }
+    </script>
+</body>
+</html>

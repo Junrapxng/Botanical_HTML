@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_v1
+    ports:
+      - "27023:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  your_app:
+    image: botanical:latest
+    container_name: botanical
+    ports:
+      - "40000:40000"
+    depends_on:
+      - mongodb
+    environment:
+      MONGODB_URI: "mongodb://mongodb:27023/tree"
+
+volumes:
+  mongodb_data:

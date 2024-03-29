@@ -1,0 +1,23 @@
+<!-- views/result.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Result Page</h1>
+    <div id="resultContainer">
+        <% data.forEach(record => { %>
+            <div class="result-item">
+                <p><strong>Scientific Name:</strong> <%= record['Scientific name'] %></p>
+                <% if (record['Image']) { %>
+                    <img src="data:image/png;base64, <%= record['Image'] %>" style="max-width: 100%;">
+                <% } %>
+            </div>
+        <% }); %>
+    </div>
+    <p><strong>Input Text:</strong> <%= inputText %></p>
+</body>
+</html>
